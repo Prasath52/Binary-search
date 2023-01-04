@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+   <html lang="en">
+      <head>
+         <title>Attendance Register</title>
+         <h1><center>Attendance Register</center></h1>
+         <h2>Employee Details</h2>
+         <body bgcolor="lightblue">
+            <input id="employe" />
+               <button id="search">Search</button>
+               <h3>Enter the name, After click the search button details will display!!!</h3>
+                 <p id="empInfo"></p>
+
+                 <script>
+                    var employeeArray = [{employeName:'Test1', checkintime:'9:00', checkouttime:'10:00',
+                     date:'2022-03-01, 2022-03-02, 2022-03-03, 2022-03-04, 2022-03-05', dept: 'QA',workinghoursperday:'1hr'},
+
+                    {employeName:'Test2', checkintime:'10:00', checkouttime:'11:00',
+                     date:'2022-03-01, 2022-03-02, 2022-03-03, 2022-03-04, 2022-03-05', dept: 'Dev',workinghoursperday:'1hr'},
+
+                    {employeName:'Test3', checkintime:'11:00', checkouttime:'12:00', 
+                     date:'2022-03-01, 2022-03-02, 2022-03-03, 2022-03-04, 2022-03-05', dept: 'Finance',workinghoursperday:'1hr'},
+
+                    {employeName:'Test4', checkintime:'12:00', checkouttime:'13:00', 
+                    date:'2022-03-01, 2022-03-02, 2022-03-03, 2022-03-04, 2022-03-05', dept: 'HR',workinghoursperday:'1hr'},
+
+                    {employeName:'Test5', checkintime:'13:00', checkouttime:'14:00', 
+                    date:'2022-03-01, 2022-03-02, 2022-03-03, 2022-03-04, 2022-03-05', dept: 'BA',workinghoursperday:'1hr'},
+
+                    {employeName:'Test6', checkintime:'14:00', checkouttime:'15:00', 
+                    date:'2022-03-01, 2022-03-02, 2022-03-03, 2022-03-04, 2022-03-05', dept: 'Admin',workinghoursperday:'1hr'},];
+
+           document.getElementById("search").addEventListener('click', function() {
+            var employe= document.getElementById("employe").value;
+            
+    var employee, info;
+    for (i = 0; i < employeeArray.length; i++) {
+        employee = employeeArray[i];
+        if (employee.employeName == employe) {
+            info =  "CheckinTime: " + employee.checkintime + "<br />";
+            info += "Checkouttime: " + employee.checkouttime + "<br />";
+            info += "Date: " + employee.date+ "<br />";
+            info += "Dept: " + employee.dept + "<br />";
+            info += "WorkingHoursperday: " + employee.workinghoursperday + "<br />";
+            document.getElementById("empInfo").innerHTML = info;
+            return;
+            
+        }
+    }
+});
+                 </script>
+                     </body>
+   </html>
